@@ -5,4 +5,10 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-module.exports = router;
+const celebrityRouter = require("./celebrity.routes.js")
+router.use("/celebrity" , celebrityRouter)
+
+const moviesRouter = require("./movies.routes.js")
+router.use("/movies", moviesRouter)
+
+module.exports = router

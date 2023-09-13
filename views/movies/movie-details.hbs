@@ -1,0 +1,27 @@
+<div class="card">
+    <h2>Todos los detalles sobre la pelicula {{oneMovie.title}}</h2>
+    <div class="card-body">
+
+        <h3 class="card-title">Titulo:  {{oneMovie.title}}</h3>
+        <p class="card-text"> Género: {{oneMovie.genre}}</p>
+        <p class="card-text">Trama: {{oneMovie.genre}}</p>
+
+        <p class="card-text">Famosos:
+
+        {{#each oneMovie.cast}}
+        <li>{{this.name}}</li>
+        <li>{{this.occupation}}</li>
+        <li>{{this.catchPhrase}}</li>
+        {{/each}}
+        </p>
+        <div class="d-flex justify-content-evenly">
+            <form action="/movies/{{oneMovie._id}}/delete" method="post">
+                <button class="btn btn-danger">Borrar</button>
+            </form>
+
+            <form action="/movies/{{oneMovie._id}}/edit" method="get">
+                <button class="btn btn-warning">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>
